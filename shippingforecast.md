@@ -1,7 +1,7 @@
-#Shipping / trash forecast script
+# Shipping / trash forecast script
 
-###Athena Office
-####Trash forecast and net warnings
+### Athena Office
+#### Trash forecast and net warnings
 
 Viking
 Variable 3 or 4 broken fishing nets, becoming southeast trash island 4 or 5. Slight or moderate plastic. Becoming poor to rough.
