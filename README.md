@@ -36,6 +36,8 @@ Plastic waste in the ocean affects wild life and enters into the food chain. Pla
 
 https://github.com/bernana777/sirens-athenahack
 
-|Useful Information|
+## Useful Information
 
-Stormglass weather forecast Ocean Cleanup Survey Remora
+- Stormglass weather forecast 
+- Ocean Cleanup Survey 
+- Remora 
