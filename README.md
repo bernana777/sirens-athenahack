@@ -2,7 +2,7 @@
 
 ## Athena hackathon April 13-14th @ Queen Mary University
 
-#### SIRENS is a Environmentally aware Company 
+#### SIRENS is an environmentally aware company 
 
 
 #### Contributors:
