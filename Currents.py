@@ -114,9 +114,9 @@ for long in data.keys():
 
 
 
-#plot_vector_field(velocity_field)
+plot_vector_field(velocity_field)
 
-trajectory(velocity_field, -17, 52, 72)
+#trajectory(velocity_field, -17, 52, 72)
 
 
 
