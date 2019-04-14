@@ -51,8 +51,36 @@ def plot_vector_field(velocity_field):
     
     
     
-def trajectory(velocity_field, long_0, lat_0):
+def trajectory(velocity_field, long_dropped, lat_dropped, time_steps):
+    output = open("trajectory.txt", "w")
     
+    # Convert velocity field from m/s to degrees/hour. 
+    mean_lat = 55 * np.pi / 180
+    
+    # 1 degree latitude ~ 111111 m
+    # 1 degree longitude ~ 111111 * cos(latitude) m
+    velocity_field["lat_vel"] /= 11111
+    velocity_field["long_vel"] /= 11111 * np.cos(mean_lat)
+    
+    # 3600 s = 1 hr
+    velocity_field["lat_vel"] *= 3600
+    velocity_field["long_vel"] *= 3600
+    
+    long, lat = long_dropped, lat_dropped
+    
+    output.write(", ".join((str(long), str(lat), "0")))
+    
+    for t in range(time_steps):
+        long_vel = velocity_field["long_vel"][int(round(long) - LONG_LOWER_LIMIT), int(round(lat) - LAT_LOWER_LIMIT), 0]
+        lat_vel = velocity_field["lat_vel"][int(round(long) - LONG_LOWER_LIMIT), int(round(lat) - LAT_LOWER_LIMIT), 0]
+        
+        long += long_vel
+        lat += lat_vel
+        
+        output.write("\n")
+        output.write(", ".join((str(long), str(lat), str(t))))
+    
+    output.close()
 
 
 
@@ -61,7 +89,7 @@ f = open("data.txt", "r")
 for line in f:
     data = ast.literal_eval(line)['grid']
 
-
+f.close()
 
 # Longitudinal and latitudinal components of velocity. 
 current = np.dtype([("long_vel", np.float64), ("lat_vel", np.float64)])
@@ -86,7 +114,11 @@ for long in data.keys():
 
 
 
-plot_vector_field(velocity_field)
+#plot_vector_field(velocity_field)
+
+trajectory(velocity_field, -17, 52, 72)
+
+
 
 
 
