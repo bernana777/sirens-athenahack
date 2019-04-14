@@ -1,6 +1,0 @@
-# First number is longitude, second number is latitude, third number is time from start in hours. 
-55.0, -14.4, 0
-56.3, -13.1, 3
-57.5, -12.8, 6
-57.9, -12.9, 9
-58.2, -13.3, 12
