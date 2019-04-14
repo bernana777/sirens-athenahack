@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 double latitude = 51.52;
-                double longitude = -0.03;
+                double longitude = -13.03;
                 Intent intentBundle = new Intent(MainActivity.this, NetMap.class);
                 Bundle bundle = new Bundle();
                 bundle.putDouble("lat", latitude);

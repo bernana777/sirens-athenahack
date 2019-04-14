@@ -44,6 +44,10 @@ public class Net
         this.Course.add(location);
     }
 
+    public Location originalLocation()
+    {
+        return this.Course.get(0);
+    }
     @Override
     public String toString()
     {

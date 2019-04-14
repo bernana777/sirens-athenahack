@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.content.Intent;
 import android.content.DialogInterface;
 
+import java.util.List;
+
 public class NetMap extends AppCompatActivity {
 
     @Override
@@ -19,10 +21,19 @@ public class NetMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net_map);
 
+
         Intent intentBundle = getIntent();
         Bundle extrasBundle = intentBundle.getExtras();
         final double boatLat = extrasBundle.getDouble("boatLat");
         final double boatLong = extrasBundle.getDouble("boatLat");
+
+
+        Net net1 = new Net();
+        //net1 = ReadNetFile.initNet(ReadNetFile.readNetFile("net1.txt"));
+        double lat1;
+        double long1;
+        lat1 = (55 - 50)*40;
+        long1 = (-15+19)*75;
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +50,14 @@ public class NetMap extends AppCompatActivity {
 
 
         ImageButton imageButton = findViewById(R.id.imageButton);
-        imageButton.setX(60);
-        imageButton.setY(22);
+        imageButton.setX((float)long1);
+        imageButton.setY((float)lat1);
         imageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 {
                     final AlertDialog.Builder NetInfo = new AlertDialog.Builder(getApplicationContext());
                     NetInfo.create();
-                    NetInfo.setMessage("Net ID: "+"\nLongtitude: "+"\nLatitude: ")
+                    NetInfo.setMessage("Net ID: 0"+"\nLongtitude: -15"+"\nLatitude: 55")
                             .setTitle("Net Information")
                             .setNegativeButton("Close", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
